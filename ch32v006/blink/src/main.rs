@@ -13,7 +13,7 @@ async fn main(_spawner: Spawner) {
     config.rcc = hal::rcc::Config::SYSCLK_FREQ_48MHZ_HSI;
     let p = hal::init(config);
 
-    let mut led = Output::new(p.PD6, Level::Low, Default::default());
+    let mut led = Output::new(p.PC4, Level::Low, Default::default());
 
     loop {
         led.set_high();
