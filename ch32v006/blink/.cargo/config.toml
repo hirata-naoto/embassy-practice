@@ -1,0 +1,9 @@
+[build]
+target = "riscv32emc-unknown-none-elf.json"
+
+[target.riscv32emc-unknown-none-elf]
+runner = "wchisp flash"
+
+[unstable]
+build-std = ["core"]
+json-target-spec = true
