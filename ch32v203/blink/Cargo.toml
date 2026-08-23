@@ -1,0 +1,22 @@
+[package]
+name = "ch32v203-app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+embedded-hal = "1.0.0"
+ch32-hal = { git = "https://github.com/ch32-rs/ch32-hal.git", features = [
+    "ch32v203c8t6",       # 使用するチップの型番に合わせて変更 (例: ch32v203c8t6, ch32v203f6p6 など)
+    "rt",                 # スタートアップルーチン (Runtime)
+    "embassy",            # Embassyフレームワーク連携
+    "memory-x",           # リンカスクリプト (memory.x) の自動生成/有効化
+    "time-driver-tim2",   # タイマー機能を使う場合
+], default-features = false }
+embassy-executor = { version = "0.10", features = ["executor-thread", "platform-riscv32"] }
+embassy-time = { version = "0.5.1", features = ["tick-hz-1_000_000"] }
+qingke-rt = "0.7.0"
+panic-halt = "0.2"
+
+[profile.release]
+lto = true
+opt-level = "z"
