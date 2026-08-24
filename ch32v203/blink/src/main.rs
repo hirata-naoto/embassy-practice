@@ -1,6 +1,8 @@
 #![no_std]
 #![no_main]
 
+
+use core::fmt::Write
 use panic_halt as _;
 use ch32_hal as hal;
 use hal::gpio::{Level, Output, Input. Pull};
