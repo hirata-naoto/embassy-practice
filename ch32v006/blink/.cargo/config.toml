@@ -1,0 +1,11 @@
+[build]
+target = "riscv32emc-unknown-none-elf"
+
+[target.riscv32emc-unknown-none-elf]
+runner = "wchisp flash"
+rustflags = [
+    "-C", "link-arg=-Tlink.x",
+]
+
+[unstable]
+build-std = ["core"]
