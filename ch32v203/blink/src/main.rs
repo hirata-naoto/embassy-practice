@@ -12,7 +12,7 @@ use embassy_time::Timer;
 async fn main(_spawner: Spawner) {
     let p = hal::init(hal::Config::default());
 
-    let mut led = Output::new(p.PB0, Level::Low, Default::default());
+    let mut led = Output::new(p.PB2, Level::Low, Default::default());
 
     loop {
         led.set_high();
