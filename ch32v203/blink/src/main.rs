@@ -2,10 +2,10 @@
 #![no_main]
 
 
-use core::fmt::Write
+use core::fmt::Write;
 use panic_halt as _;
 use ch32_hal as hal;
-use hal::gpio::{Level, Output, Input. Pull};
+use hal::gpio::{Level, Output, Input, Pull};
 use hal::usart::{Config as UsartConfig, UartTx};
 use embassy_executor::Spawner;
 use embassy_time::Timer;

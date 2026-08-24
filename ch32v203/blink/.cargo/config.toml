@@ -2,8 +2,8 @@
 target = "riscv32imc-unknown-none-elf"
 
 [target.riscv32imc-unknown-none-elf]
-runner = "wchisp flash"
-#runner = "wlink flash"
+#runner = "wchisp flash"
+runner = "wlink flash"
 
 [target .'cfg(target_arch = "riscv32")']
 rustflags = [
