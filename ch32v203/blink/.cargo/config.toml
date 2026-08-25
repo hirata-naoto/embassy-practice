@@ -3,9 +3,14 @@ target = "riscv32imc-unknown-none-elf"
 
 [target.riscv32imc-unknown-none-elf]
 #runner = "wchisp flash"
-runner = "wlink flash"
+#runner = "wlink flash"
+runner = "probe-rs run"
 
 [target .'cfg(target_arch = "riscv32")']
 rustflags = [
     "-C", "link-arg=-Tlink.x",
+    "-C", "link-arg=-Tdefmt.x",
 ]
+
+[env]
+DEFMT_LOG = "debug"

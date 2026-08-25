@@ -2,18 +2,23 @@
 #![no_main]
 
 
-use core::fmt::Write;
+use defmt::*;
+use defmt_rtt as _;
+// use panic_probe as _;
 use panic_halt as _;
+use embassy_executor::Spawner;
+use embassy_time::Timer;
 use ch32_hal as hal;
 use hal::gpio::{Level, Output, Input, Pull};
 use hal::usart::{Config as UsartConfig, UartTx};
-use embassy_executor::Spawner;
-use embassy_time::Timer;
 
 
 #[embassy_executor::main(entry = "qingke_rt::entry")]
 async fn main(_spawner: Spawner) {
     let p = hal::init(hal::Config::default());
+
+    info!("Program start!");
+
 
     // User LED (PB2)
     let mut led = Output::new(p.PB2, Level::Low, Default::default());

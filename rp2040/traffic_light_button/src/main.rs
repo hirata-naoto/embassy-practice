@@ -7,8 +7,8 @@ use defmt::*;
 use defmt_rtt as _;
 use panic_probe as _;
 use embassy_executor::Spawner;
-use embassy_rp::gpio::{Level, Output, Input, Pull};
 use embassy_time::Timer;
+use embassy_rp::gpio::{Level, Output, Input, Pull};
 
 
 #[embassy_executor::main]
