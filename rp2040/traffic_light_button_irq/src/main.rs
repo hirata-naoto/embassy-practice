@@ -28,8 +28,8 @@ async fn main(_spawner: Spawner) {
     loop {
         // 「2秒経過」または「ボタンのLow検知」を待ち受け
         match select(Timer::after_millis(2000), button.wait_for_low()).await {
-            Either::First(_) => info!("timed out (during red)!");
-            Either::Second(_) => info!("button pressed (interrupted during red)!");
+            Either::First(_) => info!("timed out (during red)!"),
+            Either::Second(_) => info!("button pressed (interrupted during red)!"),
         }
 
         red_led.set_low();
