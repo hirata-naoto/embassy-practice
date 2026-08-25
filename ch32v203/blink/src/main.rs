@@ -15,9 +15,9 @@ use hal::usart::{Config as UsartConfig, UartTx};
 
 #[embassy_executor::main(entry = "qingke_rt::entry")]
 async fn main(_spawner: Spawner) {
-    let p = hal::init(hal::Config::default());
-
     info!("Program start!");
+
+    let p = hal::init(hal::Config::default());
 
 
     // User LED (PB2)
