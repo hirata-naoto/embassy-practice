@@ -21,7 +21,7 @@ async fn main(_spawner: Spawner) {
     let p = hal::init(hal::Config::default());
 
     // User LED 
-    let mut led = Output::new(p.GPIO8, Level::Low, OutputConfig::default());
+    let mut led = Output::new(p.GPIO15, Level::Low, OutputConfig::default());
 
     // timerの初期化
     let timg0 = TimerGroup::new(p.TIMG0);
